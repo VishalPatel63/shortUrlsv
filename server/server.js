@@ -7,14 +7,14 @@ const PORT = process.env.PORT || 4000;
 dotenv.config();
 database.connect();
 
-app.use(express.json());
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000", // or 5173 if you use Vite
+    origin: "http://localhost:3000", 
     credentials: true,
   })
 );
+app.use(express.json());
 
 const urlRoute = require("./routes/urlRoutes");
 
