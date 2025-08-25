@@ -10,7 +10,7 @@ database.connect();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000", // or 5173 if you use Vite
+    origin: "https://short-urlsv.vercel.app", // or 5173 if you use Vite
     credentials: true,
   })
 );
