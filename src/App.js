@@ -1,38 +1,22 @@
+import React from "react";
+import UrlForm from "./components/UrlForm";
+import UrlList from "./components/UrlList";
 
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import { Home } from './pages/Home';
-import { Navber } from './pages/Navber';
-import { Contact } from './pages/Contact';
-import { About } from './pages/About';
-import { Projects } from './pages/Projects';
-import { Skills } from './pages/Skills';
-import data from './data';
-import { useState } from 'react';
-
-import ParticlesBackground from './common/ParticlesBackground';
-import { AllProjects } from './common/AllProjects';
 function App() {
-  const [skill, setSkill] = useState(data);
-  
   return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 flex flex-col items-center py-12 px-4">
+    
+      <h1 className="text-4xl md:text-5xl font-extrabold text-indigo-700 mb-10 text-center flex items-center gap-2">
+         URL Shortener    
+          
+      </h1>
+
    
-   <div className='  bg-richblack-900 min-h-screen'>
-   <ParticlesBackground/>
-    <div className=' overlay'     
-  
- >
-     <Navber/> 
-     <Routes>
-      <Route path = '/' element = { <Home/>}/>
-      <Route path = '/about' element = { <About/>}/>
-    <Route path="/project" element={<AllProjects skill = {skill} />} />
-      <Route path = '/skills' element = { <Skills/>}/>
-      <Route path = '/contact' element = { <Contact/>}/>
-     </Routes>
+      <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-6 md:p-10 space-y-10 border border-gray-100">
+        <UrlForm />
+        <UrlList />
+      </div>
     </div>
-   </div>
-   
   );
 }
 
