@@ -10,7 +10,7 @@ database.connect();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000", 
+    origin: "https://short-urlsv.vercel.app", 
     credentials: true,
   })
 );
