@@ -10,7 +10,7 @@ function UrlList() {
 
   const fetchUrls = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/all`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/all`);
       setUrls(res.data);
     } catch (err) {
       console.error("Error fetching URLs:", err);
@@ -19,7 +19,7 @@ function UrlList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/delete/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/delete/${id}`);
       setUrls(urls.filter((url) => url._id !== id));
     } catch (err) {
       console.error("Error deleting URL:", err);
@@ -43,12 +43,12 @@ function UrlList() {
             >
               <div>
                 <a
-                  href={`${process.env.REACT_APP_BASE_URL}/api/${url.shortCode}`}
+                  href={`${process.env.REACT_APP_API_URL}/api/${url.shortCode}`}
                   target="_blank"
                   rel="noreferrer"
                   className="text-indigo-600 font-medium hover:underline break-all"
                 >
-                  {`${process.env.REACT_APP_BASE_URL}/api/${url.shortCode}`}
+                  {`${process.env.REACT_APP_API_URL}/api/${url.shortCode}`}
                 </a>
 
                 <p className="text-gray-700 mt-1 break-all">

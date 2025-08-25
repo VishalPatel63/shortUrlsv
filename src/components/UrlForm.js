@@ -8,11 +8,11 @@ function UrlForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/api/shorten`,
+      `${process.env.REACT_APP_API_URL}/api/shorten`,
       { longUrl }
     );
     setShortUrl(
-      `${process.env.REACT_APP_BASE_URL}/api/${res.data.shortCode}`
+      `${process.env.REACT_APP_API_URL}/api/${res.data.shortCode}`
     );
   };
 
